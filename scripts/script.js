@@ -30,51 +30,47 @@ class Navbar extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML = `<nav>
-        <div class="navbar-container">
-          <a href="index.html">Home</a>
-          <div class="dropdown">
-            <a href="#">Projects</a>
-            <div class="dropdown-content">
-              <a href="#">Academic Projects</a>
-              <a href="project-game.php">My Super Amazing Game</a>
-              <a href="#">Project 2</a>
-              <a href="#">Project 3</a>
+        this.innerHTML = `
+        <nav>
+            <div class="navbar-container">
+            <a href="index.html">Home</a>
+            <a href="https://github.com/AnthDavis26">GitHub</a>
+            <div class="dropdown">
+                <a href="#">Projects</a>
+                <div class="dropdown-content">
+                    <a href="#">Academic Projects</a>
+                    <a href="#">GitHub Repositories</a>
+                </div>
             </div>
-          </div>
-          <div class="dropdown">
-            <a href="#">Blogs</a>
-            <div class="dropdown-content">
-              <a href="#">Blog Post 1</a>
-              <a href="#">Blog Post 2</a>
-              <a href="#">Blog Post 3</a>
+            <div class="dropdown">
+                <a href="#">Blogs</a>
+                <div class="dropdown-content">
+                    <a href="#">Placeholder</a>
+                </div>
             </div>
-          </div>
-          <div class="dropdown">
-            <a href="#">Academics</a>
-            <div class="dropdown-content">
-              <a href="academic-history.php">History</a>
-              <a href="#">Projects</a>
-              <a href="https://antdaviscsumb.weebly.com/" target="_blank">Student Portfolio (Obsolete)</a>
+            <div class="dropdown">
+                <a href="#">Academics</a>
+                <div class="dropdown-content">
+                    <a href="academic-history.php">History</a>
+                    <a href="#">Projects</a>
+                    <a href="https://antdaviscsumb.weebly.com/" target="_blank">Student Portfolio (Obsolete)</a>
+                </div>
             </div>
-          </div>
-          <a href="resume.pdf" target="_blank">Resume</a>
-          <a href="about.php">About</a>
-          <a href="contact.php">Contact</a>
-          <div id="theme-switch-container" style="display:none">
-            <label id="theme-slider" for="checkbox">
-              <input type="checkbox" id="checkbox" onchange="toggleTheme(this)" />
-              <div class="slider-background">
-                <div class="slider-ball"></div>
-              </div>
-            </label>
-          </div>
-        </div>
-        <div id="javascript-off-warning">
-          <p>WARNING: You should be able to navigate just fine. But to enable full site functionality, please enable
-            JavaScript.</p>
-        </div>
-      </nav>
+            <a href="resume.pdf" target="_blank">Resume</a>
+            <a href="about.php">About</a>
+            <a href="contact.php">Contact</a>
+            <div id="theme-switch-container" style="display:none">
+                <label id="theme-slider" for="checkbox">
+                <input type="checkbox" id="checkbox" onchange="toggleTheme(this)" />
+                <div class="slider-background">
+                    <div class="slider-ball"></div>
+                </div>
+                </label>
+            </div>
+            <div id="javascript-off-warning">
+            <p>WARNING: You should be able to navigate just fine. But to enable full site functionality, please enable JavaScript.</p>
+            </div>
+        </nav>
         `;
     }
 }
@@ -137,4 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     themeToggle.checked = initialTheme === 'light';
 
+    // Dynamically change title based on first h2 element
+    document.title = "Anthony Davis | " + document.getElementsByTagName("h2")[0].innerText;
 });
