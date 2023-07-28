@@ -83,7 +83,7 @@ class Aside extends HTMLElement {
         <aside>
         <figure>
           <img src="images/portrait1.jpg"></img>
-          <figcaption>Katie Saunders (left) with Anthony Davis (right), married since 2023</figcaption>
+          <figcaption>Katie Saunders (left) with Anthony Davis (right)</figcaption>
         </figure>
       </aside>
       `;
