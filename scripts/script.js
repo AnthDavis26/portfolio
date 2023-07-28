@@ -18,8 +18,8 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <header>
-        <h1>Anthony Davis' Projects</h1>
-      </header>
+            <h1>Anthony Davis' Projects</h1>
+        </header>
       `;
     }
 }
@@ -34,12 +34,12 @@ class Navbar extends HTMLElement {
         <nav>
             <div class="navbar-container">
             <a href="index.html">Home</a>
-            <a href="https://github.com/AnthDavis26">GitHub</a>
+            <a href="https://github.com/AnthDavis26" target="_blank">GitHub</a>
             <div class="dropdown">
                 <a href="#">Projects</a>
                 <div class="dropdown-content">
                     <a href="#">Academic Projects</a>
-                    <a href="#">GitHub Repositories</a>
+                    <a href="https://github.com/AnthDavis26?tab=repositories" target="_blank">GitHub Repositories</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -51,14 +51,14 @@ class Navbar extends HTMLElement {
             <div class="dropdown">
                 <a href="#">Academics</a>
                 <div class="dropdown-content">
-                    <a href="academic-history.php">History</a>
+                    <a href="academic-history.html">History</a>
                     <a href="#">Projects</a>
                     <a href="https://antdaviscsumb.weebly.com/" target="_blank">Student Portfolio (Obsolete)</a>
                 </div>
             </div>
             <a href="resume.pdf" target="_blank">Resume</a>
-            <a href="about.php">About</a>
-            <a href="contact.php">Contact</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
             <div id="theme-switch-container" style="display:none">
                 <label id="theme-slider" for="checkbox">
                 <input type="checkbox" id="checkbox" onchange="toggleTheme(this)" />
