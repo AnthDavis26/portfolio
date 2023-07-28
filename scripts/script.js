@@ -16,7 +16,7 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <header>
-            <h1>Anthony Davis' Projects</h1>
+            <h1>Anthony Davis' Portfolio</h1>
         </header>
       `;
     }
@@ -32,18 +32,10 @@ class Navbar extends HTMLElement {
         <nav>
             <div class="navbar-container">
             <a href="index.html">Home</a>
-            <a href="https://github.com/AnthDavis26" target="_blank">GitHub</a>
             <div class="dropdown">
-                <a href="#">Projects</a>
+                <a href="#">Employment</a>
                 <div class="dropdown-content">
-                    <a href="#">Academic Projects</a>
-                    <a href="https://github.com/AnthDavis26?tab=repositories" target="_blank">GitHub Repositories</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#">Blogs</a>
-                <div class="dropdown-content">
-                    <a href="#">Placeholder</a>
+                    <a href="#">Test Automation Engineer</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -52,6 +44,13 @@ class Navbar extends HTMLElement {
                     <a href="academic-history.html">History</a>
                     <a href="#">Projects</a>
                     <a href="https://antdaviscsumb.weebly.com/" target="_blank">Student Portfolio (Obsolete)</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Projects</a>
+                <div class="dropdown-content">
+                    <a href="#">Academic Projects</a>
+                    <a href="https://github.com/AnthDavis26?tab=repositories" target="_blank">GitHub Repositories</a>
                 </div>
             </div>
             <a href="resume.pdf" target="_blank">Resume</a>
@@ -83,7 +82,7 @@ class Aside extends HTMLElement {
         <aside>
         <figure>
           <img src="images/portrait1.jpg"></img>
-          <figcaption>Katie Saunders (left) with Anthony Davis (right), married since 2023</figcaption>
+          <figcaption>Katie Saunders (left) with Anthony Davis (right)</figcaption>
         </figure>
       </aside>
       `;
