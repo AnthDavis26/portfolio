@@ -1,9 +1,7 @@
 var root = document.documentElement;
 var initialTheme = localStorage.getItem('themePreference');
-
-// If initial theme is not set        
+       
 if (!initialTheme) {
-    // If user prefers light mode, set as initial theme. Otherwise, leave dark.
     const userPrefersLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
     initialTheme = userPrefersLightMode ? "light" : "dark";
 }
@@ -61,14 +59,14 @@ class Navbar extends HTMLElement {
             <a href="contact.html">Contact</a>
             <div id="theme-switch-container" style="display:none">
                 <label id="theme-slider" for="checkbox">
-                <input type="checkbox" id="checkbox" onchange="toggleTheme(this)" />
-                <div class="slider-background">
-                    <div class="slider-ball"></div>
-                </div>
+                    <input type="checkbox" id="checkbox" onchange="toggleTheme(this)" />
+                    <div class="slider-background">
+                        <div class="slider-ball"></div>
+                    </div>
                 </label>
             </div>
             <div id="javascript-off-warning">
-            <p>WARNING: You should be able to navigate just fine. But to enable full site functionality, please enable JavaScript.</p>
+                <p>WARNING: You should be able to navigate just fine. But to enable full site functionality, please enable JavaScript.</p>
             </div>
         </nav>
         `;
@@ -100,8 +98,8 @@ class Footer extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <footer>
-  <p>&copy; 2023 Anthony Davis. All rights reserved.</p>
-</footer>
+            <p>&copy; 2023 Anthony Davis. All rights reserved.</p>
+        </footer>
         `;
     }
 }
