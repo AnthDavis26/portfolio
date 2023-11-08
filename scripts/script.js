@@ -81,7 +81,7 @@ class Aside extends HTMLElement {
 class Footer extends HTMLElement {
     constructor() {
         super();
-    }
+    }java
     connectedCallback() {
         this.innerHTML = `
         <footer>
@@ -110,6 +110,4 @@ document.addEventListener('DOMContentLoaded', function () {
     themeToggle.checked = initialTheme === 'light';
     // Dynamically change title based on first h2 element
     document.title = "Anthony Davis | " + document.getElementsByTagName("h2")[0].innerText;
-    // JavaScript enabled; turn off the warning
-    document.getElementById('javascript-off-warning').style.display = 'none';
 });
