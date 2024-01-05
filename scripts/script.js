@@ -43,6 +43,7 @@ class Navbar extends HTMLElement {
                 <div class="dropdown">
                     <a href="#">Projects</a>
                     <div class="dropdown-content">
+                        <a href="https://anthdavis26.github.io/business-website/" target="_blank">Business Website</a>
                         <a href="#">Academic Projects</a>
                         <a href="https://github.com/AnthDavis26?tab=repositories" target="_blank">GitHub Repositories</a>
                     </div>
