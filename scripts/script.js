@@ -36,7 +36,7 @@ class Navbar extends HTMLElement {
                     <a href="#">Academics</a>
                     <div class="dropdown-content">
                         <a href="academic-history.html">History</a>
-                        <a href="#">Projects</a>
+                        <a href="#">Student Projects</a>
                         <a href="https://antdaviscsumb.weebly.com/" target="_blank">Student Portfolio (Obsolete)</a>
                     </div>
                 </div>
