@@ -1,22 +1,16 @@
 var root = document.documentElement;
-var initialTheme = localStorage.getItem('themePreference');    
-if (!initialTheme) {
-    const userPrefersLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
-    initialTheme = userPrefersLightMode ? "light" : "dark";
-}
-root.setAttribute('theme', initialTheme);
+
 class Header extends HTMLElement {
     constructor() {
         super();
     }
     connectedCallback() {
         this.innerHTML = `
-        <header>
-            <h1>Anthony Davis' Portfolio</h1>
-        </header>
+        <header>Anthony Davis' Portfolio</header>
       `;
     }
 }
+
 class Navbar extends HTMLElement {
     constructor() {
         super();
@@ -51,19 +45,11 @@ class Navbar extends HTMLElement {
                 <a href="resume.pdf" target="_blank">Resume</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <div id="theme-switch-container" style="display:none">
-                    <label id="theme-slider" for="checkbox">
-                    Light Switch
-                        <input type="checkbox" id="checkbox" onchange="toggleTheme(this)" />
-                        <div id="theme-slider-background">
-                            <div id="theme-slider-ball"></div>
-                        </div>
-                    </label>
-                </div>
             </div>
         `;
     }
 }
+
 class Aside extends HTMLElement {
     constructor() {
         super();
@@ -79,10 +65,11 @@ class Aside extends HTMLElement {
       `;
     }
 }
+
 class Footer extends HTMLElement {
     constructor() {
         super();
-    }java
+    }
     connectedCallback() {
         this.innerHTML = `
         <footer>
@@ -91,24 +78,14 @@ class Footer extends HTMLElement {
         `;
     }
 }
+
 document.addEventListener('DOMContentLoaded', function () {
     customElements.define('header-component', Header);
     customElements.define('navbar-component', Navbar);
     customElements.define('aside-component', Aside);
     customElements.define('footer-component', Footer);
-    document.getElementById('theme-switch-container').style.display = '';
     document.getElementsByTagName('main')[0].style.display = '';
-    const themeToggle = document.getElementById('checkbox');
-    function toggleTheme(element) {
-        const theme = element.checked ? 'light' : 'dark';
-        root.setAttribute('theme', theme);
-        localStorage.setItem('themePreference', theme);
-    }
-    // Bind the toggleTheme function to the 'change' event of the theme toggle
-    themeToggle.addEventListener('change', function () {
-        toggleTheme(this);
-    });
-    themeToggle.checked = initialTheme === 'light';
+
     // Dynamically change title based on first h2 element
     document.title = "Anthony Davis | " + document.getElementsByTagName("h2")[0].innerText;
 });
