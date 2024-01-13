@@ -42,7 +42,7 @@ class Navbar extends HTMLElement {
                         <a href="https://github.com/AnthDavis26?tab=repositories" target="_blank">GitHub Repositories</a>
                     </div>
                 </div>
-                <a href="resume.pdf" target="_blank">Resume</a>
+                <a href="https://drive.google.com/file/d/1RGpVFwT6LoTDMKarko_c1zG9-M5BLgSy/view?usp=sharing" target="_blank">Resume</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
