@@ -19,7 +19,12 @@ class Navbar extends HTMLElement {
         this.innerHTML = `
             <div id="navbar-container">
                 <a href="index.html">Home</a>
-                <a href="#">Arcade</a>
+                <div class="dropdown">
+                    <a href="#">Arcade</a>
+                    <div class="dropdown-content">
+                        <a href="https://github.com/AnthDavis26/PAG_Text">Pog-Apocalyptic George</a>
+                    </div>
+                </div>
                 <div class="dropdown">
                     <a href="#">Employment</a>
                     <div class="dropdown-content">
@@ -40,6 +45,7 @@ class Navbar extends HTMLElement {
                         <a href="https://anthdavis26.github.io/mockup-store/" target="_blank">Mockup Store</a>
                         <a href="#">Academic Projects</a>
                         <a href="https://github.com/AnthDavis26?tab=repositories" target="_blank">GitHub Repositories</a>
+                        <a href="https://github.com/AnthDavis26/PAG_Text">Pog-Apocalyptic George</a>
                     </div>
                 </div>
                 <a href="https://drive.google.com/file/d/1RGpVFwT6LoTDMKarko_c1zG9-M5BLgSy/view?usp=sharing" target="_blank">Resume</a>
