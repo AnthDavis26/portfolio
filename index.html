@@ -13,14 +13,62 @@
     <navbar-component></navbar-component>
     <aside-component></aside-component>
     <body>
-        <main style="display:none">
-          <h1>UPDATE: April 26, 2024</h1>
-          <p>My text-based C++ game <a href="https://github.com/AnthDavis26/PAG_Text">Post-Apocalyptic George</a> has been overhauled to be more manageable. It is now component-based; level navigation is handled by a Navigator class, progress saving is handled by a SaveManager, and the main menu is consolidated into its own class. In terms of frontend, the game contains a functional main menu and not much else for now.</p>
-          <br/><br/>
-          <h1>Jan 4, 2024</h1>
-          <p><a href="https://anthdavis26.github.io/mockup-store/">Mockup Store</a> website added under Projects. Not very functional so far; most of my time spent on this project has been for improving my CSS skills.</p>
-          <h1>NOTE: most of the website is W.I.P.! Check my <a href="https://drive.google.com/file/d/1RGpVFwT6LoTDMKarko_c1zG9-M5BLgSy/view?usp=sharing">resume</a> or <a href="./contact.html">contact me</a> to learn more in the meantime.</h1>
-          <h2>Welcome</h2>
+      <main>
+        <div id="wip-disclaimer">
+          <p>
+            NOTE: most of the website is W.I.P.! Check my <a href="https://drive.google.com/file/d/1RGpVFwT6LoTDMKarko_c1zG9-M5BLgSy/view?usp=sharing">resume</a> or <a href="./contact.html">contact me</a> to learn more in the meantime.
+          </p>
+        </div>
+        <div class="main-section">
+          <h1>SHOWCASE</h1>
+          <div id="showcase">
+            <div class="exhibit">
+              <a href="https://github.com/AnthDavis26/PAG_Text" target="_blank">
+                <div class="exhibit-tags">Game, C++, Text-Based</div>
+                <figcaption>Post-Apocalyptic George</figcaption>
+                <img src="images/george.png"></img>
+              </a>
+            </div>
+            <div class="exhibit">
+              <a href="https://anthdavis26.github.io/mockup-store/" target="_blank">
+                <div class="exhibit-tags">Web Development, HTML, CSS, JavaScript</div>
+                <figcaption>Mockup Store</figcaption>
+                <img src="images/mockup-store-screenshot.png"></img>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="main-section">
+          <h1>BLOG</h1>
+          <div class="blog-entry">
+            <h2>WEEKLY RECAP May 27, 2024 - May 31, 2024</h2>
+            <p>From now on, I will try to update this page weekly with blog posts chronicling my personal project endeavors. This is not something I'm used to sharing, but I will do what I can. The format and such may evolve over time.</p>
+            <p><h3>Post-Apocalyptic George (C++ Text-Based Game)</h3> <a href="https://github.com/AnthDavis26/PAG_Text/releases/tag/Pre-release"><u>Download v0.0.1 Here</a></u></p>
+
+            <p>While my overall plan for the rest of the game is vague at best, I felt it was time for me to incorporate how the player can make decisions. As this game is intended to be dry and comical with bizarre elements, I re-incorporated a feature that I had in this project a few years ago&#8230;</p>
+
+            <h3>Making George Eat Trash</h3>
+            <p>My wife was adamant that I bring back this ability, and I was inclined to oblige.</p>
+            
+            <p>For the most part, I imagine that player decisions will be multiple-choice. But I want the player to also be able to think outside the box and be rewarded for it, or at least amused by the result. This is why custom prompt inputs exist in the game.</p>
+            
+            <p>Each word from the user's input is compared to a custom thesaurus (the words to compare vary depending on context within the game). Once corresponding synonyms for both &ldquo;eat&rdquo; and &ldquo;trash&rdquo; are found, the input is deemed correct to make George eat trash. Excellent.</p>
+            
+            <p>The thesaurus stores unordered sets of synonyms for different words, so searching for matching synonyms has O(1) complexity (it does not depend on the length of the user's input string). The primary operation is to scan each character in the user input to form a temporary substring to check for a synonym. Thus the primary operation has a time complexity of O(n); the number of steps taken to finish the process, in the worst cases, steadily increases the more characters there are to scan.</p>
+            
+            <p>I would love to be able to incorporate AI to parse user input in a more meaningful way, but I don't have that kind of knowledge. Maybe in the future.</p>
+          </div>
+          <div class="blog-entry">
+            <h2>April 26, 2024</h2>
+            <p>My text-based C++ game <a href="https://github.com/AnthDavis26/PAG_Text" target="_blank">Post-Apocalyptic George</a> has been overhauled to be more manageable. It is now component-based; level navigation is handled by a Navigator class, progress saving is handled by a SaveManager, and the main menu is consolidated into its own class. In terms of frontend, the game contains a functional main menu and not much else for now.</p>
+          </div>
+          <div class="blog-entry">
+            <h2>Jan 4, 2024</h2>
+            <p><a href="https://anthdavis26.github.io/mockup-store/">Mockup Store</a> website added under Projects. Not very functional so far; most of my time spent on this project has been for improving my CSS skills.</p>
+          </div>
+        </div>
+        <div class="main-section">
+          <h1>Welcome</h1>
           <p>
             Hello! I'm Anthony Davis, a Computer Science graduate with a Bachelor of Science degree. I graduated from California State University Monterey Bay in 2020.
           </p>
@@ -33,7 +81,8 @@
           <p>
             I hope you enjoy your stay!
           </p>
-        </main>
+        </div>
+      </main>
     </body>
     <footer-component></footer-component>
 </html>

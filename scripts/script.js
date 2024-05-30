@@ -6,8 +6,8 @@ class Header extends HTMLElement {
     }
     connectedCallback() {
         this.innerHTML = `
-        <header>Anthony Davis' Portfolio</header>
-      `;
+            <header>Anthony Davis' Portfolio</header>
+        `;
     }
 }
 
@@ -20,36 +20,25 @@ class Navbar extends HTMLElement {
             <div id="navbar-container">
                 <a href="index.html">Home</a>
                 <div class="dropdown">
-                    <a href="#">Arcade</a>
+                    <a href="#">Game Dev</a>
                     <div class="dropdown-content">
-                        <a href="https://github.com/AnthDavis26/PAG_Text">Post-Apocalyptic George</a>
+                        <a href="https://github.com/AnthDavis26/PAG_Text" target="_blank">C++ Text Adventure: Post-Apocalyptic George</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="#">Employment</a>
+                    <a href="#">Web Dev</a>
                     <div class="dropdown-content">
-                        <a href="#">Test Automation Engineer</a>
+                        <a href="https://anthdavis26.github.io/mockup-store/" target="_blank">Mockup Store</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <a href="#">Academics</a>
                     <div class="dropdown-content">
-                        <a href="academic-history.html">History</a>
-                        <a href="#">Student Projects</a>
-                        <a href="https://antdaviscsumb.weebly.com/" target="_blank">Student Portfolio (Obsolete)</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <a href="#">Projects</a>
-                    <div class="dropdown-content">
-                        <a href="https://anthdavis26.github.io/mockup-store/" target="_blank">Mockup Store</a>
-                        <a href="#">Academic Projects</a>
+                    <a href="#">Academic Projects</a>
                         <a href="https://github.com/AnthDavis26?tab=repositories" target="_blank">GitHub Repositories</a>
-                        <a href="https://github.com/AnthDavis26/PAG_Text">Post-Apocalyptic George</a>
                     </div>
                 </div>
                 <a href="https://drive.google.com/file/d/1RGpVFwT6LoTDMKarko_c1zG9-M5BLgSy/view?usp=sharing" target="_blank">Resume</a>
-                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
         `;
@@ -62,13 +51,14 @@ class Aside extends HTMLElement {
     }
     connectedCallback() {
         this.innerHTML = `
-        <aside>
-        <figure>
-          <img src="images/portrait1.png"></img>
-          <figcaption>Anthony Davis</figcaption>
-        </figure>
-      </aside>
-      `;
+            <aside>
+                <figure>
+                <img src="images/portrait1.png"></img>
+                <figcaption><b>Anthony Davis</b></figcaption>
+                <figcaption>Bachelor of Science Graduate in Computer Science</figcaption>
+                </figure>
+            </aside>
+        `;
     }
 }
 
@@ -78,9 +68,9 @@ class Footer extends HTMLElement {
     }
     connectedCallback() {
         this.innerHTML = `
-        <footer>
-            <p>&copy; 2023 Anthony Davis. All rights reserved.</p>
-        </footer>
+            <footer>
+                <p>&copy; 2023 Anthony Davis. All rights reserved.</p>
+            </footer>
         `;
     }
 }
