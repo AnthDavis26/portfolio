@@ -55,6 +55,53 @@
         <div class="main-section">
           <h1>BLOG</h1>
           <div class="blog-entry">
+            <h2>June 19, 2024</h2>
+            <p>Well, so much for weekly updates. It's been very busy in my personal life.
+            </p>
+            <p>In terms of my projects, most of my time has been spent on Post-Apocalyptic George. I have further condensed my code to be easier to manage. Before now, the logic to dictate what action the player takes based on their input consisted largely of switch-case blocks;</p>
+            <h3>Example</h3>
+            <p>
+              "PromptUntilConditionMet(PressedOne, PressedTwo, etc);<br/>
+              Case (choice=='1')
+              ....Do This; break;<br/>
+              Case (choice=='2')
+              ....Do That; break;<br/>
+              Case (choice=='3')
+              ....Do Something Else; break;<br/>
+              Case (choice=='p')
+              ....Pause Game; break;<br/>
+              Case (choice=='t')
+              ....Enter Text; break;<br/>
+              Case (other)
+              ...Etc..."<br/>
+            </p>
+            <p>That's pretty cumbersome. This sort of logic would be carried over to countless functions in the game. It's too difficult to manage, and thus more prone to error, and ultimately harder to debug. It's simply time-consuming.</p>
+            <p>Presumably, the player will be able to type 'p' or 't' at most points in the game. So firstly, we can condense this part into a PromptUntil sort of function and to avoid accidentally forgetting to check for those commands.</p>
+            <p>
+              "PromptUntilConditionMet(PressedOne, PressedTwo, etc);<br/>
+              Case (choice=='1')
+              ....Do This; break;<br/>
+              Case (choice=='2')
+              ....Do That; break;<br/>
+              Case (choice=='3')
+              ....Do Something Else; break;<br/>
+              Case (other)
+              ...Etc..."<br/>
+            </p>
+            <p>In reality, these switch-case blocks would contain more code than what has been conveyed, such as 'break' or 'return' to prevent sequential case blocks from being accessed. This means the code would be even more bulky than this pseudocode.</p>
+            <p>I opted to create a function that allows these sorts of arguments instead:</p>
+            <p>
+              "PromptUntilCommand(<br/>
+              ....('1', DoThis),<br/>
+              ....('2', DoThat),<br/>
+              ....('3', SomethingElse),<br/>
+              ...etc<br/>
+              )"
+            </p>
+            <p>No bulky switch-case blocks (again, bulkier than demonstrated here), simplified logic, and nicer to look at.</p>
+            <p>It's a small update in terms of concept, but the implementation was a learning curve. I'm still getting used to C++ variadic templates, including code to accept multiple functions as parameters (as seen for PromptUntilCommand()).</p>
+          </div>
+          <div class="blog-entry">
             <h2>WEEKLY RECAP May 27, 2024 - May 31, 2024</h2>
             <p>From now on, I will try to update this page weekly with blog posts chronicling my personal project endeavors. This is not something I'm used to sharing, but I will do what I can. The format and such may evolve over time.</p>
             <p><h3>Post-Apocalyptic George (C++ Text-Based Game)</h3> <a href="https://github.com/AnthDavis26/PAG_Text/releases/tag/Pre-release"><u>Download v0.0.1 Here</a></u></p>
