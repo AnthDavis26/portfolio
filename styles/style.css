@@ -286,11 +286,9 @@ img {
     text-align: center;
   }
 
-
   .main-section {
     margin-bottom: 4rem;
   }
-
 
   /* Showcase */
   #showcase {
@@ -298,7 +296,7 @@ img {
   }
 
   .exhibit a {
-    height: 20vh;
+    height: 10em;
   }
 
   .exhibit-tags {

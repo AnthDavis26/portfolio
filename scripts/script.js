@@ -53,7 +53,7 @@ class Aside extends HTMLElement {
         this.innerHTML = `
             <aside>
                 <figure>
-                <img src="images/portrait1.png"></img>
+                <img src="images/portrait2.png"></img>
                 <figcaption><b>Anthony Davis</b></figcaption>
                 <figcaption>Bachelor of Science Graduate in Computer Science</figcaption>
                 </figure>
