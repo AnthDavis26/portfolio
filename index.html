@@ -6,145 +6,38 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Akshar:wght@600&display=swap">
       <link rel="stylesheet" href="styles/style.css">
       <link rel="icon" type="image/x-icon" href="images/favicon.png">
-      <script src="scripts/script.js" type="text/javascript"></script>
-      <title>Anthony Davis' Portfolio</title>
+      <title>Anthony Davis</title>
     </head>
-    <header-component></header-component>
-    <navbar-component></navbar-component>
-    <aside-component></aside-component>
     <body>
+      <header>
+        <span id="header-name">Anthony Davis</span>
+        <nav>
+          <ul>
+            <a href="#home"><li>Home</li></a>
+            <a href="#projects"><li>Projects</li></a>
+            <a href="#contact"><li>Contact</li></a>
+            <a href="#blog"><li>Blog</li></a>
+          </ul>
+        </nav>
+      </header>
       <main>
-        <div class="main-section">
-          <h1>SHOWCASE</h1>
-          <div id="showcase">
-            <div class="exhibit">
-              <a href="https://github.com/AnthDavis26/PAG_Text" target="_blank">
-                <div class="exhibit-tags">Game, C++, Text-Based</div>
-                <figcaption>Post-Apocalyptic George</figcaption>
-                <img src="images/george.png"></img>
-              </a>
-            </div>
-            <div class="exhibit">
-              <a href="https://github.com/AnthDavis26/anthdavis26.github.io" target="_blank">
-                <div class="exhibit-tags">Web Development, HTML, CSS</div>
-                <figcaption>Portfolio Source Code</figcaption>
-                <img src="images/portfolio-screenshot.png"></img>
-              </a>
-            </div>
-            <div class="exhibit">
-              <a href="https://anthdavis26.github.io/mockup-store/" target="_blank">
-                <div class="exhibit-tags">Web Development, HTML, CSS, JavaScript</div>
-                <figcaption>Mockup Store</figcaption>
-                <img src="images/mockup-store-screenshot.png"></img>
-              </a>
-            </div>
-            <div class="exhibit">
-              <a href="https://github.com/AnthDavis26/CarinaProject" target="_blank">
-                <div class="exhibit-tags">Test Automation, Carina, Java</div>
-                <figcaption>Solvd Course - Carina Project</figcaption>
-                <img></img>
-              </a>
-            </div>
-            <div class="exhibit">
-              <a href="https://github.com/AnthDavis26/social-media" target="_blank">
-                <div class="exhibit-tags">C++, MySQL, Backend</div>
-                <figcaption>Social Media Website</figcaption>
-                <img></img>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="main-section">
-          <h1>BLOG</h1>
-          <div class="blog-entry">
-            <h2>June 19, 2024</h2>
-            <p>Well, so much for weekly updates. It's been very busy in my personal life.
-            </p>
-            <p>In terms of my projects, most of my time has been spent on Post-Apocalyptic George. I have further condensed my code to be easier to manage. Before now, the logic to dictate what action the player takes based on their input consisted largely of switch-case blocks;</p>
-            <h3>Example</h3>
-            <p>
-              "PromptUntilConditionMet(PressedOne, PressedTwo, etc);<br/>
-              Case (choice=='1')
-              ....Do This; break;<br/>
-              Case (choice=='2')
-              ....Do That; break;<br/>
-              Case (choice=='3')
-              ....Do Something Else; break;<br/>
-              Case (choice=='p')
-              ....Pause Game; break;<br/>
-              Case (choice=='t')
-              ....Enter Text; break;<br/>
-              Case (other)
-              ...Etc..."<br/>
-            </p>
-            <p>That's pretty cumbersome. This sort of logic would be carried over to countless functions in the game. It's too difficult to manage, and thus more prone to error, and ultimately harder to debug. It's simply time-consuming.</p>
-            <p>Presumably, the player will be able to type 'p' or 't' at most points in the game. So firstly, we can condense this part into a PromptUntil sort of function and to avoid accidentally forgetting to check for those commands.</p>
-            <p>
-              "PromptUntilConditionMet(PressedOne, PressedTwo, etc);<br/>
-              Case (choice=='1')
-              ....Do This; break;<br/>
-              Case (choice=='2')
-              ....Do That; break;<br/>
-              Case (choice=='3')
-              ....Do Something Else; break;<br/>
-              Case (other)
-              ...Etc..."<br/>
-            </p>
-            <p>I opted to create a function that allows these sorts of arguments instead:</p>
-            <p>
-              "PromptUntilCommand(<br/>
-              ....('1', DoThis),<br/>
-              ....('2', DoThat),<br/>
-              ....('3', SomethingElse),<br/>
-              ...etc<br/>
-              )"
-            </p>
-            <p>No bulky switch-case blocks, simplified logic, and nicer to look at.</p>
-            <p>It's a small update in terms of concept, but the implementation was a learning curve. I'm still getting used to C++ variadic templates, including code to accept multiple functions as parameters (as seen for PromptUntilCommand()).</p>
-          </div>
-          <div class="blog-entry">
-            <h2>WEEKLY RECAP May 27, 2024 - May 31, 2024</h2>
-            <p>From now on, I will try to update this page weekly with blog posts chronicling my personal project endeavors. This is not something I'm used to sharing, but I will do what I can. The format and such may evolve over time.</p>
-            <p><h3>Post-Apocalyptic George (C++ Text-Based Game)</h3> <a href="https://github.com/AnthDavis26/PAG_Text/releases/tag/Pre-release"><u>Download v0.0.1 Here</a></u></p>
-
-            <p>While my overall plan for the rest of the game is vague at best, I felt it was time for me to incorporate how the player can make decisions. As this game is intended to be dry and comical with bizarre elements, I re-incorporated a feature that I had in this project a few years ago&#8230;</p>
-
-            <h3>Making George Eat Trash</h3>
-            <p>My wife was adamant that I bring back this ability, and I was inclined to oblige.</p>
-            
-            <p>For the most part, I imagine that player decisions will be multiple-choice. But I want the player to also be able to think outside the box and be rewarded for it, or at least amused by the result. This is why custom prompt inputs exist in the game.</p>
-            
-            <p>Each word from the user's input is compared to a custom thesaurus (the words to compare vary depending on context within the game). Once corresponding synonyms for both &ldquo;eat&rdquo; and &ldquo;trash&rdquo; are found, the input is deemed correct to make George eat trash. Excellent.</p>
-            
-            <p>The thesaurus stores unordered sets of synonyms for different words, so searching for matching synonyms has O(1) complexity (it does not depend on the length of the user's input string). The primary operation is to scan each character in the user input to form a temporary substring to check for a synonym. Thus the primary operation has a time complexity of O(n); the number of steps taken to finish the process, in the worst cases, steadily increases the more characters there are to scan.</p>
-            
-            <p>I would love to be able to incorporate AI to parse user input in a more meaningful way, but I don't have that kind of knowledge. Maybe in the future.</p>
-          </div>
-          <div class="blog-entry">
-            <h2>April 26, 2024</h2>
-            <p>My text-based C++ game <a href="https://github.com/AnthDavis26/PAG_Text" target="_blank">Post-Apocalyptic George</a> has been overhauled to be more manageable. It is now component-based; level navigation is handled by a Navigator class, progress saving is handled by a SaveManager, and the main menu is consolidated into its own class. In terms of frontend, the game contains a functional main menu and not much else for now.</p>
-          </div>
-          <div class="blog-entry">
-            <h2>Jan 4, 2024</h2>
-            <p><a href="https://anthdavis26.github.io/mockup-store/">Mockup Store</a> website added under Projects. Not very functional so far; most of my time spent on this project has been for improving my CSS skills.</p>
-          </div>
-        </div>
-        <div class="main-section">
-          <h1>Welcome</h1>
-          <p>
-            Hello! I'm Anthony Davis, a Computer Science graduate with a Bachelor of Science degree. I graduated from California State University Monterey Bay in 2020.
-          </p>
-          <p>
-            Due to Covid-19 restrictions, I was unable to obtain any internships. Eventually, I worked for over a year with a very prominent tech giant. Due to confidentiality agreements, I cannot disclose who my client was. But if you'd like more details, please check my resume or my employment history. Or go ahead and <a href="./contact.html">contact me!</a>
-          </p>
-          <p>
-            At the moment, I'm seeking work as a software engineer. As a lifelong gamer, my dream is to develop video games. It's why I majored in computer science in the first place. I'm open to internships and apprenticeships! I'm malleable and eager to learn and work hard.
-          </p>
-          <p>
-            I hope you enjoy your stay!
-          </p>
+        <h1>Software Engineer Portfolio</h1>
+        <img id="portrait" src="./images/portrait2.png" />
+        <a href="#"><div class="resume-button">View Resume</div></a>
+        <div class="social-media-section">
+          <a href="https://www.linkedin.com/in/anthony-davis-cs">
+            <img src="./images/LinkedIn_icon.svg" />
+          </a>
+          <a href="https://github.com/AnthDavis26?tab=repositories">
+            <img src="./images/github-mark.svg" />
+          </a>
+          <a href="mailto: anthony.m.davis.26@gmail.com">
+            <img src="./images/email-icon.svg" />
+          </a>
         </div>
       </main>
+      <footer>
+        <p>&copy; 2024 Anthony Davis. All Rights Reserved.</p>
+      </footer>
     </body>
-    <footer-component></footer-component>
 </html>
