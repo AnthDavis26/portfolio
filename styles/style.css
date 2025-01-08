@@ -44,6 +44,9 @@ header {
   font-size: clamp(.6rem, 5vw, 1.1rem);
   justify-content: space-around;
   padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 
 #header-name {
@@ -82,6 +85,7 @@ nav ul a li:hover::after {
 }
 
 main {
+  margin-top: clamp(-100px, 15vh, 200px);
   grid-area: main;
   display: flex;
   flex-direction: column;
@@ -91,6 +95,7 @@ main {
 
 h1 {
   position: relative;
+  font-size: 2.5vw;
 }
 
 h1::after {
@@ -202,8 +207,131 @@ footer {
   font-size: clamp(.8rem, 4vw, 1.2rem);
 }
 
+.game-grid {
+  position: relative;
+  display: grid;
+  grid-template:
+              "game-top game-top game-top game-top" 1fr
+              "game-left game-screen game-screen game-right" 10fr
+              "game-left game-console game-console game-right" 0 /
+              1fr 5fr auto 1fr;
+  width: 90vw;
+  height: 100%;
+  aspect-ratio: 8 / 3;
+  position: relative;
+  border-radius: 1em;
+  background-color: black;
+}
+
+.game-grid * {
+  user-select: none;
+}
+
+.game-top {
+  grid-area: game-top;
+  color: white;
+  justify-content: center;
+}
+
+.game-left {
+  display: flex;
+  flex-direction: column;
+  grid-area: game-left;
+  background-color: black;
+  justify-content: flex-start;
+  gap: clamp(.25em, 1vw, 2em);
+  border-radius: 0 0 0 12px;
+}
+
+.game-left > .game-button {
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  background: url("../images/game-button-reflect.png"),
+              url("../images/game-button-bg.png");
+  justify-content: center;
+  height: 10%;
+  align-items: center;
+  font-size: clamp(.6rem, 1.5vw, 1.5rem);
+  border-radius: .5rem;
+  width: 75%;
+  transition: margin-left .25s;
+  outline: .01em solid rgba(255, 255, 255, 0.497);
+}
+
+.game-left > .game-button:hover {
+  filter: brightness(1.5);
+}
+
+.game-left > .game-button:active {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), #0791fa66), url("../images/game-button-reflect.png"),
+  url("../images/game-button-bg.png");
+  outline: .01em solid rgb(0, 76, 255);
+  margin-left: .25em;
+}
+
+.game-right {
+  display: flex;
+  flex-direction: column;
+  grid-area: game-right;
+  background-color: black;
+  font-size: clamp(.5rem, 1.4vw, 2rem);
+  border-radius: 0 0 1em 0;
+}
+
+.game-right > .hud-map {
+  position: relative;
+  border: 2px solid white;
+  height: 20%;
+  cursor: default;
+}
+
+.hud-map-player-mark {
+  position: absolute;
+  top: 50%;
+  left: 27%;
+}
+
+.game-screen {
+  grid-area: game-screen;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.game-grid > .game-text-console {
+  position: absolute;
+  grid-area: game-console;
+  background-color: rgba(0, 0, 0, .8);
+  text-align: left;
+  padding: 1em;
+  width: 100%;
+  height: 20vh;
+  bottom: 0;
+  overflow: auto;
+}
+
+.game-grid > .game-text-console::-webkit-scrollbar {
+  background: none;
+}
+
+.game-grid > .game-text-console::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, .4);
+}
+
 
 @media screen and (max-width: 768px) {
+  h1 {
+    font-size: 5vw;
+  }
+
   .showcase {
     flex-direction: column;
     align-items: center;
@@ -218,5 +346,15 @@ footer {
     top: 0;
     left: 2%;
     font-size: .7rem;
+  }
+
+  .game-grid {
+    aspect-ratio: 1 / 1;
+    height: 60vh;
+    width: 90vw;
+  }
+
+  .game-text-console {
+    font-size: .5rem;
   }
 }
