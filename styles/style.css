@@ -329,7 +329,8 @@ footer {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 5vw;
+    margin-top: 5vh;
+    font-size: 10vw;
   }
 
   .showcase {
